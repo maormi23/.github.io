@@ -87,6 +87,49 @@ h3 {
     color: #007bff;
 }
 
+/* --- NEW NAVIGATION BAR --- */
+.navbar {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar li a {
+    display: block;
+    color: #007bff;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.navbar li a:hover {
+    background-color: #ddd;
+    color: #333;
+}
+
+/* Class for the active page link */
+.navbar li a.active {
+    background-color: #007bff;
+    color: white;
+}
+/* --- END NEW NAVIGATION BAR --- */
+
+
 /* Section items */
 section {
     margin-bottom: 20px;
@@ -124,6 +167,22 @@ ul li {
     font-size: 0.95em;
 }
 
+/* --- NEW CONTACT PAGE STYLES --- */
+.contact-page-info {
+    font-size: 1.1em;
+    padding: 15px;
+}
+.contact-page-info p {
+    margin: 20px 0;
+}
+.contact-page-info .fa-brands, 
+.contact-page-info .fa-solid {
+    font-size: 1.2em;
+    width: 25px; /* Align icons */
+}
+/* --- END CONTACT PAGE STYLES --- */
+
+
 /* Footer */
 .footer {
     text-align: center;
@@ -152,3 +211,13 @@ ul li {
         text-align: center;
         margin-top: 15px;
     }
+    
+    /* Adjust navbar for mobile */
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar li a {
+        padding: 10px;
+    }
+}
