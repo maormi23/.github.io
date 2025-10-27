@@ -58,14 +58,20 @@ h3 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Modern shadow */
 }
 
-.profile-pic { /* NEW STYLE */
+.profile-pic {
     width: 120px;
     height: 120px;
-    border-radius: 50%; /* Makes it a circle */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    margin-right: 25px; /* Space between image and text */
-    border: 3px solid #007bff; /* Small blue border for emphasis */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px; 
+    border: 3px solid #007bff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.header-right {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end; 
 }
 
 .header-text {
@@ -269,6 +275,14 @@ ul li {
     .profile-pic { /* Adjust for mobile */
         margin-right: 0; /* Remove right margin on mobile */
         margin-bottom: 15px; /* Add space below picture on mobile */
+    }
+
+    .header-right {
+        align-items: center; 
+    }
+    
+    .contact-info {
+        text-align: center; 
     }
     .header-text h1 { font-size: 2em; }
     .header-text h2 { font-size: 1.2em; }
