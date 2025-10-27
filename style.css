@@ -58,6 +58,16 @@ h3 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Modern shadow */
 }
 
+.profile-pic { /* NEW STYLE */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Makes it a circle */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    margin-right: 25px; /* Space between image and text */
+    border: 3px solid #007bff; /* Small blue border for emphasis */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
 .header-text {
     flex-grow: 1;
 }
