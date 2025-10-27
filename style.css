@@ -1,12 +1,14 @@
-/* General settings */
+/* --- General settings --- */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Lato', Arial, sans-serif; /* New modern font */
+    line-height: 1.7;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: left; /* Standard LTR alignment */
+    background-color: #f7f9fc; /* Softer background color */
+    color: #34495e; /* Darker text color */
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -14,50 +16,46 @@ body {
     max-width: 900px;
     margin: 40px auto;
     padding: 30px;
-    background: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background: transparent; /* Container is now just for layout */
+    box-shadow: none; /* Removed shadow from main container */
 }
 
-/* Headings */
+/* --- Headings --- */
 h1, h2, h3 {
-    color: #007bff; /* Primary blue color */
+    color: #2c3e50; /* Darker, more professional blue */
+    font-weight: 700;
 }
 
 h1 {
-    font-size: 2.2em;
+    font-size: 2.5em;
     margin-bottom: 5px;
 }
 
 h2 {
     font-size: 1.4em;
-    font-weight: normal;
+    font-weight: 400;
     color: #555;
+    margin-top: 0;
 }
 
 h3 {
-    font-size: 1.6em;
-    padding-bottom: 5px;
-    border-bottom: 2px solid #007bff;
-    margin-top: 25px;
-    margin-bottom: 15px;
+    font-size: 1.8em;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #007bff; /* Bolder accent border */
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
-/* Header and Contact Info */
+/* --- Header and Contact Info --- */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-}
-
-.profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 20px; /* Adjusted margin for LTR */
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Modern shadow */
 }
 
 .header-text {
@@ -65,8 +63,9 @@ h3 {
 }
 
 .contact-info {
-    font-size: 0.9em;
-    text-align: right; /* Align contact info to the right */
+    font-size: 1em;
+    text-align: right;
+    flex-shrink: 0;
 }
 
 .contact-info p {
@@ -76,23 +75,31 @@ h3 {
 .contact-info a {
     color: #333;
     text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
-    text-decoration: underline;
+    color: #007bff;
+    text-decoration: none;
 }
 
 .fa-solid, .fa-brands {
-    margin-right: 8px; /* Space between icon and text for LTR */
+    margin-right: 8px;
     color: #007bff;
 }
 
-/* --- NEW NAVIGATION BAR --- */
+/* --- NEW Navigation Bar --- */
 .navbar {
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     border-bottom: 1px solid #ddd;
     margin-bottom: 30px;
     overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Softer shadow */
+    position: sticky;
+    top: 20px;
+    z-index: 10;
 }
 
 .navbar ul {
@@ -109,115 +116,175 @@ h3 {
 
 .navbar li a {
     display: block;
-    color: #007bff;
+    color: #2c3e50; /* Darker text */
     text-align: center;
-    padding: 14px 20px;
+    padding: 16px 22px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease, border-bottom-color 0.3s ease;
+    border-bottom: 3px solid transparent; /* For active state */
 }
 
 .navbar li a:hover {
-    background-color: #ddd;
-    color: #333;
+    background-color: #f7f9fc;
+    color: #007bff;
 }
 
-/* Class for the active page link */
 .navbar li a.active {
-    background-color: #007bff;
-    color: white;
+    color: #007bff;
+    border-bottom-color: #007bff; /* Underline for active */
+    background-color: transparent;
 }
-/* --- END NEW NAVIGATION BAR --- */
 
-
-/* Section items */
+/* --- Main Content Sections --- */
 section {
     margin-bottom: 20px;
+    /* We will style the .item inside as cards */
 }
 
+/* --- NEW CARD DESIGN for items --- */
 .item {
-    margin-bottom: 15px;
+    background: #fff;
+    border: 1px solid #eef;
+    border-radius: 8px;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.item:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+    transform: translateY(-3px);
 }
 
 .item h4 {
     margin: 0 0 5px 0;
-    color: #444;
+    color: #007bff; /* Make titles stand out */
+    font-size: 1.2em;
+    font-weight: 700;
 }
 
 .item p {
     margin: 5px 0;
-    font-size: 0.95em;
+    font-size: 1em; /* Slightly larger base font */
 }
 
 .item span {
     font-style: italic;
     color: #777;
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px; /* More space */
+    font-size: 0.9em;
 }
 
 /* Lists (e.g., in Education/Experience) */
 ul {
-    list-style-type: disc; /* Use standard bullets */
-    padding-left: 20px; /* Padding for bullets */
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
 }
 
 ul li {
-    margin-bottom: 5px;
-    font-size: 0.95em;
+    margin-bottom: 8px;
+    font-size: 1em;
 }
 
-/* --- NEW CONTACT PAGE STYLES --- */
+/* --- Contact Page Styles --- */
 .contact-page-info {
-    font-size: 1.1em;
-    padding: 15px;
+    background: #fff;
+    border: 1px solid #eef;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
+
 .contact-page-info p {
-    margin: 20px 0;
+    font-size: 1.2em; /* Larger text for contact */
+    margin: 25px 0;
 }
 .contact-page-info .fa-brands, 
 .contact-page-info .fa-solid {
     font-size: 1.2em;
-    width: 25px; /* Align icons */
+    width: 30px; 
+    text-align: center;
+    color: #007bff;
 }
-/* --- END CONTACT PAGE STYLES --- */
+.contact-page-info a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 700;
+}
+.contact-page-info a:hover {
+    text-decoration: underline;
+}
 
 
-/* Footer */
+/* --- Footer --- */
 .footer {
     text-align: center;
-    margin-top: 30px;
-    padding-top: 15px;
+    margin-top: 40px;
+    padding-top: 20px;
     border-top: 1px solid #ddd;
-    font-size: 0.85em;
-    color: #777;
+    font-size: 0.9em;
+    color: #888;
 }
 
-/* Media Query for smaller screens */
+/* --- Media Query for smaller screens --- */
 @media (max-width: 600px) {
     .container {
-        width: 95%;
-        margin: 20px auto;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .header, .navbar, .item, .contact-page-info {
+        border-radius: 0; /* Full width on mobile */
+        margin-bottom: 10px;
         padding: 15px;
+    }
+
+    .navbar {
+        top: 0; /* Stick to top on mobile */
     }
 
     .header {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        margin-bottom: 10px;
     }
+    
+    .header-text h1 { font-size: 2em; }
+    .header-text h2 { font-size: 1.2em; }
 
     .contact-info {
         text-align: center;
         margin-top: 15px;
     }
     
-    /* Adjust navbar for mobile */
     .navbar ul {
         flex-direction: column;
     }
 
     .navbar li a {
-        padding: 10px;
+        padding: 12px;
+        font-size: 1.1em;
+        border-bottom: 0; /* Remove border on mobile */
+    }
+    
+    .navbar li a.active {
+        border-bottom: 0;
+        background-color: #f0f7ff;
+    }
+    
+    h3 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    main {
+        padding: 0 10px; /* Add padding to main content on mobile */
     }
 }
